@@ -4,7 +4,7 @@ import './SideBar.css'
 
 const SideBar = () => {
     return (
-        <div style={{backgroundColor:'#FF007F',height:'700px'}} className='m-5'>
+        <div style={{backgroundColor:'#FF007F',height:'700px'}} className='p-5'>
             <h5>
                 <li>
                     <Link to='/orderList'>Order List</Link>
