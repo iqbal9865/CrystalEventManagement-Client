@@ -1,0 +1,9 @@
+li{
+    list-style: none;
+    text-align: justify;
+    padding: 10px 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
