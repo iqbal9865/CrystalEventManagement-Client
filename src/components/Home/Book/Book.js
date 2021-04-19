@@ -10,8 +10,11 @@ import Navbar from '../../Shared/Navbar/Navbar';
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
 const Book = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const [shippingData, setShippingData] = useState(null);
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        setShippingData(data);
+      };
     const {_id} = useParams()
     const [booking, setBooking] = useState({})
     const [logInUser,setLogInUser] = useContext(UserContext)
@@ -20,7 +23,33 @@ const Book = () => {
         .then(res => res.json())
         .then(data => setBooking(data.find(book => book._id === _id)))
     },[])
-    const {name,price} = booking;
+    const {eventName,price} = booking;
+    const handlePaymentSuccess = paymentId => {
+      console.log('console',shippingData)
+        const orderDetails = { 
+          ...logInUser,  
+          shipment: shippingData.eventName, 
+          paymentId,
+          orderTime: new Date() 
+        };
+    
+        fetch(`http://localhost:5000/addOrders`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(orderDetails)
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data) {
+            //   processOrder();
+              alert('your order placed successfully');
+            }
+          })
+      }
+
+   
     return (
         <div className='row'>
             <Navbar></Navbar>
@@ -30,16 +59,22 @@ const Book = () => {
             </div>
             <div className='col-md-7'>
                 <h3>Book</h3>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                 <input placeholder='Enter Email' defaultValue={logInUser.email} {...register("email", { required: true })} /> <br/>
-                 <input  placeholder='Enter Name' defaultValue={logInUser.name} {...register("userName", { required: true })} /> <br/>
-                  {errors.userName && <span>This field is required</span>}
+                <div style={{display: shippingData ? 'none': 'block'}} className="col-md-6">
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <input placeholder='Enter Email' defaultValue={logInUser.email} {...register("email", { required: true })} /> <br/>
+                    <input  placeholder='Enter Name' defaultValue={logInUser.name} {...register("userName", { required: true })} /> <br/>
+                    {errors.userName && <span>This field is required</span>}
 
-                <input defaultValue={name} {...register("name")} />
-                <h5>Your Service Charge will be <span style={{color:'#FF007F'}}> ${price}</span></h5>
-                <ProcessPayment></ProcessPayment>
-                {/* <input style={{backgroundColor:'#f3c5a8'}} value='CheckOut' type="submit" /> */}
-                </form>
+                    <input defaultValue={eventName} {...register("eventName")} />
+                    <h5>Your Service Charge will be <span style={{color:'#FF007F'}}> ${price}</span></h5>
+                    
+                    <input style={{backgroundColor:'#f3c5a8'}} value='Shipment' type="submit" />
+                    </form>
+                </div>
+                <div style={{display: shippingData ? 'block': 'none'}} className="col-md-6">
+                     <h2>Payment Process</h2>
+                    <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
+                </div>
                 
             </div>
         </div>

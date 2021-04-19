@@ -5,7 +5,23 @@ import SideBar from '../SideBar/SideBar';
 const MakeAdmin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        const eventData = {
+            email: data.email
+        }
+        const url = `http://localhost:5000/addAdmin`
+        fetch(url,{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(eventData)
+        })
+        .then(res => res.json())
+          .then(data => {
+            if (data) {
+              alert('Admin Added in DataBase');
+            }
+          })
 }
     return (
         <div className='row'>

@@ -16,6 +16,7 @@ import Book from './components/Home/Book/Book';
 import Review from './components/Home/Review/Review';
 import ManageService from './components/DashBoard/ManageService/ManageService';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import BookingList from './components/Home/BookingList/BookingList';
 export const UserContext = createContext();
 function App() {
   const [logInUser, setLogInUser] = useState({});
@@ -27,30 +28,33 @@ function App() {
           <Route path="/home">
             <Home/>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <DashBoard/>
-          </Route>
-          <Route path="/orderList">
+          </PrivateRoute>
+          <PrivateRoute path="/orderList">
             <OrderList/>
-          </Route>
-          <Route path="/addService">
+          </PrivateRoute>
+          <PrivateRoute path="/addService">
             <AddService/>
-          </Route>
-          <Route path="/makeAdmin">
+          </PrivateRoute>
+          <PrivateRoute path="/makeAdmin">
             <MakeAdmin/>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/book/:_id">
             <Book/>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/review">
+          <PrivateRoute path="/review">
             <Review/>
-          </Route>
-          <Route path="/manageService">
+          </PrivateRoute>
+          <PrivateRoute path="/bookingList">
+            <BookingList/>
+          </PrivateRoute>
+          <PrivateRoute path="/manageService">
             <ManageService/>
-          </Route>
+          </PrivateRoute>
           <Route exact path="/">
             <Home/>
           </Route>
