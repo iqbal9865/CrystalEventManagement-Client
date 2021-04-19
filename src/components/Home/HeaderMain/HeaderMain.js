@@ -1,5 +1,6 @@
 import React from 'react';
 import headerImage from '../../../Images/headerImage.jpg'
+import './HeaderMain.css'
 const HeaderMain = () => {
     return (
         <div style={{backgroundColor: '#f3c5a8',borderRadius:'2em'}} className='row container mt-5 m-auto d-flex align-items-center'>
@@ -10,7 +11,7 @@ const HeaderMain = () => {
 
                 <button style={{padding:'7px 10px', backgroundColor:'#f3c5a8',margin:'15px',border:'1px solid black',borderRadius:'3px', fontSize:'20px'}}>Get An Appointment</button>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 headerImage">
                 <img className='image-fluid' style={{height:'400px', width:'500px'}} src={headerImage} alt=""/>
             </div>
         </div>

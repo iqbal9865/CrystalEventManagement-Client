@@ -11,17 +11,17 @@ const Footer = () => {
                </div>
                <div className="col-md-3 col-6">
                     <h3>Company</h3>
-                    <li>About</li>
-                    <li>Project</li>
-                    <li>Our team</li>
-                    <li>Terms & Condition</li>
+                    <h6>About</h6>
+                    <h6>Project</h6>
+                    <h6>Our team</h6>
+                    <h6>Terms & Condition</h6>
                </div>
-               <div className="col-md-3 col-6">
+               <div className="col-md-3 col-6 m-auto">
                     <h3>Quick Link</h3>
-                    <li>Our Blogs</li>
-                    <li>Quick Links</li>
-                    <li>Contact US</li>
-                    <li>Rentals</li>
+                    <h6>Our Blogs</h6>
+                    <h6>Quick Links</h6>
+                    <h6>Contact US</h6>
+                    <h6>Rentals</h6>
                </div>
                <div className="col-md-3 col-6">
                     <h3>About US</h3>

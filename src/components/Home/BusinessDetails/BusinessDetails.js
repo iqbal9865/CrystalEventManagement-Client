@@ -1,10 +1,11 @@
 import React from 'react';
 import decor from '../../../Images/Decor_servic.jpg'
+
 const BusinessDetails = () => {
     return (
-        <section style={{backgroundColor:'#f3c5a8',padding:'30px',height:'500px',borderRadius:'1em'}} className='container row my-5 m-auto align-items-center'>
+        <section className='business' style={{backgroundColor:'#f3c5a8',padding:'30px',height:'500px',borderRadius:'1em'}} className='container row my-5 m-auto align-items-center'>
             <div className='col-md-6'>
-                <img class='image-fluid' style={{height: '350px', width:'550px',borderRadius:'1em'}} src={decor} alt=""/>
+                <img className='image-fluid' style={{height: '350px', width:'550px',borderRadius:'1em'}} src={decor} alt=""/>
             </div>
             <div className='col-md-6'>
                 <h2>Let US Handle <br/> Your Event Professionally!</h2>
@@ -15,7 +16,7 @@ const BusinessDetails = () => {
                         <h1 style={{color:'#FF007F'}}>600+</h1>
                         <h5>Happy Customer</h5>
                     </div>
-                    <div>
+                    <div className='res'>
                         <h1 style={{color:'#FF007F'}}>20+</h1>
                         <h5>Total Services</h5>
                     </div>
