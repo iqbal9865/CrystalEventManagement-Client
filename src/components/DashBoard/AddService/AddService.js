@@ -1,11 +1,14 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import SideBar from '../SideBar/SideBar';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import Navbar from '../../Shared/Navbar/Navbar';
+import { UserContext } from '../../../App';
+import { useContext } from 'react';
 const AddService = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [logInUser, setLogInUser] = useContext(UserContext)
     const [imageURL,setImageURL] = useState(null)
     const onSubmit = data => {
         console.log('data=',data)
@@ -39,6 +42,19 @@ const AddService = () => {
         console.log(error);
       });
     }
+    const [isAdmin, setIsAdmin] = useState(false)
+    useEffect(() => {
+        fetch('http://localhost:5000/isAdmin',{
+            method:'POST',
+            headers: {
+               'content-type': 'application/json'
+            },
+           body: JSON.stringify({email : logInUser.email})
+        })
+        .then(res => res.json())
+        .then(data => setIsAdmin(data))
+        
+    },[])
     return (
         <div>
         <Navbar/>
@@ -49,7 +65,7 @@ const AddService = () => {
                  <SideBar></SideBar>
             </div>
             
-            <div className='col-md-9'>
+            {isAdmin && <div className='col-md-9'>
                
                 <h4 style={{color:'#FF007F'}} className='px-3'>Add Services</h4> 
                 <form className='mt-5' onSubmit={handleSubmit(onSubmit)}>
@@ -74,7 +90,7 @@ const AddService = () => {
                     </div>
                 </form>
                 
-            </div>
+            </div>}
             
             
         </div>

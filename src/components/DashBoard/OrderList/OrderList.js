@@ -2,8 +2,10 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import SideBar from '../SideBar/SideBar';
+
 const OrderList = () => {
     const [orders, setOrders] = useState([])
+   
 useEffect(()=> {
     fetch('http://localhost:5000/orders')
     .then(res => res.json())
