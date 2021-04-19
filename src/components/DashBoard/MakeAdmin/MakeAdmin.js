@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import SideBar from '../SideBar/SideBar';
-
+import Navbar from '../../Shared/Navbar/Navbar';
 const MakeAdmin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -25,8 +25,9 @@ const MakeAdmin = () => {
 }
     return (
         <div className='row'>
+            <Navbar/>
             <div className="col-md-3">
-            <h3 style={{color:'#FF007F'}}>Crystal Events</h3>
+           
                 <SideBar></SideBar>
             </div>
            <div className="col-md-9"> 
