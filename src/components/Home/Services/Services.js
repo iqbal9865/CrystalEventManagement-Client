@@ -15,7 +15,7 @@ const Services = () => {
             <h2 className='my-4'>OUR AWESOME  SERVICES </h2>
             <div className='row my-5'>   
              {
-                services.map(service => <SingleService service={service}></SingleService>)
+                services.map(service => <SingleService key={service._id} service={service}></SingleService>)
              }
             </div>
         </section>

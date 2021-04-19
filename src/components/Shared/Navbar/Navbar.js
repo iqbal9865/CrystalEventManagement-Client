@@ -19,7 +19,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li class="nav-item">
-                            <Link style={{fontSize:'20px',textDecoration:'none',color:'black'}} class="nav-link active" aria-current="page" to='/addService'>Dashboard
+                            <Link style={{fontSize:'20px',textDecoration:'none',color:'black'}} class="nav-link active" aria-current="page" to='/addService'>Admin
                             </Link>
                         </li>
                         

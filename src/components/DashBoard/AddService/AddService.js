@@ -3,6 +3,7 @@ import {useState} from 'react';
 import SideBar from '../SideBar/SideBar';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import Navbar from '../../Shared/Navbar/Navbar';
 const AddService = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [imageURL,setImageURL] = useState(null)
@@ -39,9 +40,12 @@ const AddService = () => {
       });
     }
     return (
+        <div>
+        <Navbar/>
         <div className='row'>
+           
             <div className="col-md-3">
-                <h3 style={{color:'#FF007F'}}>Crystal Events</h3>
+                
                  <SideBar></SideBar>
             </div>
             
@@ -73,6 +77,7 @@ const AddService = () => {
             </div>
             
             
+        </div>
         </div>
     );
 };

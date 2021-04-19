@@ -8,7 +8,7 @@ const BusinessDetails = () => {
             </div>
             <div className='col-md-6'>
                 <h2>Let US Handle <br/> Your Event Professionally!</h2>
-                <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est odit error nam autem asperiores facilis adipisci nobis, debitis at porro deleniti provident rem, et iure saepe illo beatae quam dolorem cumque ut laboriosam neque temporibus maxime. Adipisci quidem nihil cumque minus ex explicabo. Rerum tenetur natus sequi aperiam ex ea.</small>
+                <p style={{margin:'0 10px'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est odit error nam autem asperiores facilis adipisci nobis, debitis at porro deleniti provident rem, et iure saepe illo beatae quam dolorem cumque ut laboriosam neque temporibus maxime. Adipisci quidem nihil cumque minus ex explicabo. Rerum tenetur natus sequi aperiam ex ea.</p>
 
                 <div className='d-flex mx-5'>
                     <div className='mx-5'>

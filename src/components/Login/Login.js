@@ -4,7 +4,11 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 import Navbar from '../Shared/Navbar/Navbar';
+import { useHistory, useLocation } from 'react-router';
 const Login = () => {
+  let history = useHistory();
+  let location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
     const [logInUser, setLogInUser] = useContext(UserContext);
 
     if (firebase.apps.length === 0) {
@@ -21,6 +25,7 @@ const Login = () => {
     const { displayName, email } = result.user;
     const signedInUser = { name: displayName, email }
       setLogInUser(signedInUser);
+      history.replace(from);
   }).catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
