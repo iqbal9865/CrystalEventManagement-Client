@@ -33,7 +33,7 @@ const Book = () => {
           orderTime: new Date() 
         };
     
-        fetch(`http://localhost:5000/addOrders`, {
+        fetch(`https://lit-shore-54368.herokuapp.com/addOrders`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

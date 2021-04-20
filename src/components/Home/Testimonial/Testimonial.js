@@ -3,7 +3,7 @@ import img from '../../../Images/event_coordination.jpg'
 const Testimonial = () => {
     const [reviews, setReview] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/review')
+        fetch('https://lit-shore-54368.herokuapp.com/review')
         .then(res => res.json())
         .then(data => setReview(data))
     },[])

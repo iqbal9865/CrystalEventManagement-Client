@@ -18,7 +18,7 @@ const AddService = () => {
             message: data.message,
             price: data.price
         }
-        const url = `http://localhost:5000/addServices`
+        const url = `https://lit-shore-54368.herokuapp.com/addServices`
         fetch(url,{
             method:'POST',
             headers:{
@@ -44,7 +44,7 @@ const AddService = () => {
     }
     const [isAdmin, setIsAdmin] = useState(false)
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin',{
+        fetch('https://lit-shore-54368.herokuapp.com/isAdmin',{
             method:'POST',
             headers: {
                'content-type': 'application/json'

@@ -8,7 +8,7 @@ const BookingList = () => {
     const [logInUser,setLogInUser] = useContext(UserContext)
 const [orders, setOrders] = useState([])
 useEffect(()=> {
-    fetch('http://localhost:5000/orders?email='+logInUser.email)
+    fetch('https://lit-shore-54368.herokuapp.com/orders?email='+logInUser.email)
     .then(res => res.json())
     .then(data => setOrders(data))
 },[])

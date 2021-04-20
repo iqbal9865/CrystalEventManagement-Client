@@ -17,7 +17,7 @@ const Review = () => {
                 designation: data.designation
             }
             console.log(eventData)
-            const url = `http://localhost:5000/addReview`
+            const url = `https://lit-shore-54368.herokuapp.com/addReview`
             fetch(url,{
                 method:'POST',
                 headers:{

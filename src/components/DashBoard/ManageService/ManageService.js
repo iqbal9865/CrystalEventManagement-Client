@@ -6,14 +6,14 @@ import SideBar from '../SideBar/SideBar';
 const ManageService = () => {
     const [services, setService] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://lit-shore-54368.herokuapp.com/services')
         .then(res => res.json())
         .then(data => setService(data))
     },[])
     
     const deleteProduct = (id) => {
         console.log('unique id : ',id)
-        fetch(`http://localhost:5000/delete/${id}`,{
+        fetch(`https://lit-shore-54368.herokuapp.com/delete/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())
