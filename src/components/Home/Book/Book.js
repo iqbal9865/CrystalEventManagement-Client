@@ -65,7 +65,7 @@ const Book = () => {
                     <input  placeholder='Enter Name' defaultValue={logInUser.name} {...register("userName", { required: true })} /> <br/>
                     {errors.userName && <span>This field is required</span>}
 
-                    <input defaultValue={eventName} {...register("eventName")} />
+                    <input placeholder='Enter Event Name' defaultValue={eventName} {...register("eventName")} />
                     <h5>Your Service Charge will be <span style={{color:'#FF007F'}}> ${price}</span></h5>
                     
                     <input style={{backgroundColor:'#f3c5a8'}} value='Shipment' type="submit" />

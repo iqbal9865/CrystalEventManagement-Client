@@ -24,6 +24,7 @@ useEffect(()=> {
                     <h5 className='w-25'>Event Type</h5>
                     <h5 className='w-25'>Your Payment ID</h5>
                     <h5 className='w-25'>Booked Time</h5>
+                    <h5 className='w-25'>Email</h5>
                 </div>
                 <br/>
           {
@@ -32,6 +33,7 @@ useEffect(()=> {
                   <h5 className='w-25'>{order.shipment}</h5>
                   <h6 className='w-25'>{order.paymentId}</h6>
                   <h6 className='w-25'>{order.orderTime}</h6>
+                  <h6 className='w-25'>{order.email}</h6>
               </div>)
           }
          
