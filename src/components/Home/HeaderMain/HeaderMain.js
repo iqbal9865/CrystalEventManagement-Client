@@ -1,6 +1,7 @@
 import React from 'react';
 import headerImage from '../../../Images/headerImage.jpg'
 import './HeaderMain.css'
+
 const HeaderMain = () => {
     return (
         <div style={{backgroundColor: '#f3c5a8',borderRadius:'2em'}} className='row container mt-5 m-auto d-flex align-items-center'>
